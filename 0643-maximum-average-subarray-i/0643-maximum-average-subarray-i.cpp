@@ -5,15 +5,14 @@ public:
         for (int i =0;i<k;i++){
             sum+=nums[i];
         }
-        double avg=sum/k;
-        double maxavg=avg;
+        double maxsum=sum;
         for (int i = k;i<nums.size();i++){
             sum+= nums[i];
             sum-=nums[i-k];
-            avg=sum/k;
-            maxavg=max(maxavg,avg);
+            maxsum=max(maxsum,sum);
         }
-        return maxavg;
+
+        return maxsum/k;
         
     }
 };
