@@ -6,16 +6,16 @@ public:
 
         for (string s : strs) {
 
-            int freq[26] = {0};
+            vector<int> freq(26, 0);
 
             for (char c : s) {
                 freq[c - 'a']++;
             }
 
-            string key = "";
+            string key;
 
             for (int i = 0; i < 26; i++) {
-                key += "#" + to_string(freq[i]);
+                key += to_string(freq[i]) + "#";
             }
 
             mp[key].push_back(s);
@@ -23,8 +23,8 @@ public:
 
         vector<vector<string>> ans;
 
-        for (auto &x : mp) {
-            ans.push_back(x.second);
+        for (auto &it : mp) {
+            ans.push_back(it.second);
         }
 
         return ans;
