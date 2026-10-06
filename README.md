@@ -5,6 +5,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0049-group-anagrams](https://github.com/DivyanshBhandary/leetcode-solutions/tree/master/0049-group-anagrams) |
+| [0078-subsets](https://github.com/DivyanshBhandary/leetcode-solutions/tree/master/0078-subsets) |
 | [0121-best-time-to-buy-and-sell-stock](https://github.com/DivyanshBhandary/leetcode-solutions/tree/master/0121-best-time-to-buy-and-sell-stock) |
 | [0238-product-of-array-except-self](https://github.com/DivyanshBhandary/leetcode-solutions/tree/master/0238-product-of-array-except-self) |
 | [0643-maximum-average-subarray-i](https://github.com/DivyanshBhandary/leetcode-solutions/tree/master/0643-maximum-average-subarray-i) |
@@ -39,4 +40,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [1011-capacity-to-ship-packages-within-d-days](https://github.com/DivyanshBhandary/leetcode-solutions/tree/master/1011-capacity-to-ship-packages-within-d-days) |
+## Backtracking
+|  |
+| ------- |
+| [0078-subsets](https://github.com/DivyanshBhandary/leetcode-solutions/tree/master/0078-subsets) |
+## Bit Manipulation
+|  |
+| ------- |
+| [0078-subsets](https://github.com/DivyanshBhandary/leetcode-solutions/tree/master/0078-subsets) |
 <!---LeetCode Topics End-->
