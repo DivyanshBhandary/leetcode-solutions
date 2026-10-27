@@ -1,48 +1,25 @@
 class Solution {
 public:
     vector<int> eventualSafeNodes(vector<vector<int>>& graph) {
-        int n = graph.size();
-
-        vector<vector<int>> rev(n);
-        vector<int> indegree(n, 0);
-
-        // Reverse the graph
-        for (int i = 0; i < n; i++) {
-            for (int node : graph[i]) {
-                rev[node].push_back(i);
-                indegree[i]++;
-            }
+        vector<int> seen(graph.size(), 0);
+        vector<int> answer;
+        for(int i=0; i<graph.size(); i++){
+            if(DFS(i, graph, seen)) answer.push_back(i);
         }
-
-        queue<int> q;
-
-        // Terminal nodes have outdegree 0
-        for (int i = 0; i < n; i++) {
-            if (indegree[i] == 0) {
-                q.push(i);
-            }
+        return answer;
+    }
+    bool DFS(int ind, vector<vector<int>>& graph, vector<int>& seen){
+        if(seen[ind]==1){
+            return false;
         }
-
-        vector<int> safe;
-
-        // Kahn's algorithm
-        while (!q.empty()) {
-            int node = q.front();
-            q.pop();
-
-            safe.push_back(node);
-
-            for (int neighbor : rev[node]) {
-                indegree[neighbor]--;
-
-                if (indegree[neighbor] == 0) {
-                    q.push(neighbor);
-                }
-            }
+        if(seen[ind]==2) return true;
+        seen[ind] = 1;
+        bool to = true;
+        for(int i=0; i<graph[ind].size(); i++){
+            to = to && DFS(graph[ind][i], graph, seen);
+            if(!to) return false;
         }
-
-        sort(safe.begin(), safe.end());
-
-        return safe;
+        seen[ind] = 2;
+        return true;
     }
 };
